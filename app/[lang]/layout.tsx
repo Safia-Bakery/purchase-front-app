@@ -35,7 +35,7 @@ export default function RootLayout({
           />
         </Head>
         <Header lang={params.lang} />
-        <main>{children}</main>
+        <main className="relative">{children}</main>
       </body>
     </html>
   );

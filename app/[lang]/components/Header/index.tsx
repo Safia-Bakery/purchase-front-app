@@ -23,7 +23,7 @@ export default async function Header({ lang }: { lang: Locale }) {
           <ul className="flex gap-x-8">
             {Object.entries(lib?.header || {})?.map((item) => (
               <li key={item[0]}>
-                <CustomLink href={item[0]}>{item[1]}</CustomLink>
+                <CustomLink href={`#${item[0]}`}>{item[1]}</CustomLink>
               </li>
             ))}
           </ul>
