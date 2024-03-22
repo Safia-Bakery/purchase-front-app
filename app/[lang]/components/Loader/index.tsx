@@ -2,6 +2,7 @@ import { FC } from "react";
 import styles from "./index.module.scss";
 import cl from "classnames";
 import safiaLogo from "/assets/images/safia.png";
+import Image from "next/image";
 
 interface Props {
   is_static?: boolean;
@@ -13,7 +14,7 @@ const Loading: FC<Props> = ({ is_static = false, className }) => {
     <div
       className={cl(className, styles.wrap, { [styles.absolute]: !is_static })}
     >
-      <img
+      <Image
         className={styles.loadingCircle}
         src={safiaLogo}
         height={50}

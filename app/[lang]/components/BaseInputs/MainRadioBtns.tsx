@@ -2,14 +2,13 @@ import cl from "classnames";
 import styles from "./index.module.scss";
 import { FC } from "react";
 import { UseFormRegisterReturn } from "react-hook-form";
-import { StatusName } from "@/utils/helpers";
 
 interface Props {
   onChange?: (val: boolean) => void;
   className?: string;
   value?: boolean;
   disabled?: boolean;
-  values: typeof StatusName;
+  values: any;
   register?: UseFormRegisterReturn;
   checked?: number;
 }
@@ -22,7 +21,7 @@ const MainRadioBtns: FC<Props> = ({ values, value, onChange }) => {
 
   return (
     <div className={cl(styles.formControl, "form-control")}>
-      {values.map((item) => (
+      {values.map((item: any) => (
         <label key={item.id} className={styles.radioBtn}>
           <input
             type="radio"

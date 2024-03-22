@@ -25,6 +25,7 @@ const Modal: FC<Props> = ({
     };
     window.addEventListener("keydown", closeOnEscapePressed);
     return () => window.removeEventListener("keydown", closeOnEscapePressed);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

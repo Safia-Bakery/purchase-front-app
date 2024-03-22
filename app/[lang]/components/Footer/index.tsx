@@ -10,11 +10,11 @@ import insta from "@/public/icons/insta.svg";
 const Footer = () => {
   return (
     <footer className="bg-footerBg p-6">
-      <Container className="flex items-center justify-between">
+      <Container className="flex items-center justify-between lg:flex-row flex-col gap-4">
         <span className="text-white">2023 © Safia.uz</span>
 
         <Image src={purchase} alt={"purchase-text"} width={120} height={62} />
-        <div className="flex gap-6">
+        <div className="flex gap-6 w-full justify-around lg:w-48">
           <Image src={message} alt={"message"} width={20} height={20} />
           <Image src={facebook} alt={"facebook"} width={20} height={20} />
           <Image src={tg} alt={"tg"} width={20} height={20} />

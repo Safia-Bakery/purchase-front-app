@@ -1,8 +1,6 @@
 "use client";
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper } from "swiper/react";
 import { FreeMode, Pagination } from "swiper/modules";
-import slider from "@/public/images/slider2.png";
-import Image from "next/image";
 import SlideButtons from "./button";
 import { ReactNode } from "react";
 
