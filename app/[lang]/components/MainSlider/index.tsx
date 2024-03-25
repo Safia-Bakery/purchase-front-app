@@ -6,7 +6,7 @@ import Image from "next/image";
 
 export default function MainSlider() {
   return (
-    <section className="absolute inset-0 lg:h-[60vh]">
+    <section className="lg:absolute inset-0 lg:h-[60svh]">
       <Swiper
         spaceBetween={0}
         loop
@@ -19,7 +19,7 @@ export default function MainSlider() {
               src={item}
               alt={"slider-img"}
               objectFit="contain"
-              className="h-[60svh] w-full min-h-[350px]"
+              className="lg:h-[60svh] w-full min-h-[350px]"
             />
           </SwiperSlide>
         ))}

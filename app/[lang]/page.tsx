@@ -23,7 +23,6 @@ import developing from "@/public/images/eggPrep.png";
 import AdvantagesSlider from "./components/AdvantagesSlider";
 import SuppliersSlider from "./components/SuppliersSlider";
 import Link from "next/link";
-import Footer from "./components/Footer";
 
 export default async function Home({
   params: { lang },
@@ -71,10 +70,10 @@ export default async function Home({
   return (
     <>
       <section>
-        <div>
+        <div className="relative lg:mt-36">
           <MainSlider />
           <Container className="relative lg:h-[60vh]">
-            <div className="absolute top-1/2 -translate-y-1/2 lg:p-10 z-10 bg-white rounded-xl">
+            <div className="lg:absolute top-1/2 lg:-translate-y-1/2 lg:p-10 z-10 bg-white rounded-xl">
               <h1 className="uppercase text-5xl">{page.home.about_company}</h1>
               <p className="md:max-w-[430px] w-full text-textGray lg:my-6">
                 {page.home.description}
@@ -243,8 +242,6 @@ export default async function Home({
             alt={"And together we will give happiness to our world!"}
           />
         </div>
-
-        <Footer />
       </section>
     </>
   );

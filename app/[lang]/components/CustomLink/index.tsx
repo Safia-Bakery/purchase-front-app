@@ -5,6 +5,7 @@ interface CustomLinkProps {
   href: string;
   lang?: string;
   children: React.ReactNode;
+  className?: string;
   [key: string]: any;
 }
 

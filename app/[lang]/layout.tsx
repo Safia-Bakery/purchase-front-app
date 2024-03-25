@@ -5,6 +5,7 @@ import { Locale, i18n } from "@/i18n.config";
 import { Inter } from "next/font/google";
 import Header from "./components/Header";
 import Head from "next/head";
+import Footer from "./components/Footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -35,7 +36,8 @@ export default function RootLayout({
           />
         </Head>
         <Header lang={params.lang} />
-        <main className="relative">{children}</main>
+        <main>{children}</main>
+        <Footer />
       </body>
     </html>
   );
