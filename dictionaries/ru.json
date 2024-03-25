@@ -48,6 +48,14 @@
     "about": {
       "title": "About Us",
       "description": "This is the about page"
+    },
+
+    "cooperate": {
+      "descr": "Заполни форму коммерческого предложения или отправь свое!",
+      "name": "ФИО (указать полностью)",
+      "input": "Введите",
+      "adress": "Адрес сайта",
+      "selectCategory": "Выберите категорию товара"
     }
   },
   "header": {

@@ -1,6 +1,7 @@
 import { FC, ReactNode } from "react";
 import { FieldError, FieldErrorsImpl, Merge } from "react-hook-form";
 import styles from "./index.module.scss";
+import cl from "classnames";
 
 interface BaseProps {
   label?: string;
@@ -12,19 +13,19 @@ interface BaseProps {
 
 const BaseInput: FC<BaseProps> = ({
   label,
-  className,
+  className = "",
   error,
   children,
   labelClassName,
 }) => {
   return (
-    <div className={className}>
+    <div className={`${className} mb-2`}>
       {label && (
-        <label className={(styles.label, labelClassName)}>{label}</label>
+        <label className={cl(styles.label, labelClassName)}>{label}</label>
       )}
       {children}
       {error && (
-        <div className="alert alert-danger p-2" role="alert">
+        <div className="text-[10px] text-red-500" role="alert">
           {error?.message?.toString()}
         </div>
       )}

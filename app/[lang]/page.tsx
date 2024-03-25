@@ -14,7 +14,6 @@ import stabilization from "@/public/icons/stabilization.svg";
 import caring from "@/public/icons/caring.svg";
 import developingIcon from "@/public/icons/developing.svg";
 import grow from "@/public/icons/grow.svg";
-import familyText from "@/public/icons/familyText.svg";
 import guests from "@/public/images/guests.png";
 import product from "@/public/images/product.png";
 import family from "@/public/images/family.png";
@@ -70,15 +69,17 @@ export default async function Home({
   return (
     <>
       <section>
-        <div className="relative lg:mt-36">
+        <div className="relative ">
           <MainSlider />
           <Container className="relative lg:h-[60vh]">
             <div className="lg:absolute top-1/2 lg:-translate-y-1/2 lg:p-10 z-10 bg-white rounded-xl">
-              <h1 className="uppercase text-5xl">{page.home.about_company}</h1>
-              <p className="md:max-w-[430px] w-full text-textGray lg:my-6">
+              <h1 className="uppercase lg:text-5xl text-2xl lg:my-0 my-3">
+                {page.home.about_company}
+              </h1>
+              <p className="md:max-w-[430px] w-full text-textGray lg:my-6 ">
                 {page.home.description}
               </p>
-              <Button className="w-64">{base.send_request}</Button>
+              <Button className="w-64 lg:mt-0 mt-3">{base.send_request}</Button>
             </div>
           </Container>
         </div>
@@ -86,23 +87,35 @@ export default async function Home({
 
       <section className="lg:mt-14">
         <Container>
-          <div className="flex justify-between lg:my-8" id={"purchasements"}>
-            <div className="flex flex-col flex-1">
+          <div className="flex justify-between lg:my-16" id={"purchasements"}>
+            <div className="flex flex-col flex-1 mt-3">
               <h2 className="text-3xl">{page.home.company_purchases}</h2>
-              <p className="text-lg mt-4 mb-6 text-textGray">
+              <p className="lg:text-lg text-xs mt-4 mb-6 text-textGray">
                 {page.home.company_descr}
               </p>
+              <div className="flex">
+                <div className="flex flex-1 flex-col">
+                  <h4 className="mb-4 mt-4">
+                    {page.home.purchase_regulations}
+                  </h4>
+                  <Button className="w-56 mb-8 ">{base.download_pdf}</Button>
 
-              <h4 className="mb-4 mt-4">{page.home.purchase_regulations}</h4>
-              <Button className="w-56 mb-8 ">{base.download_pdf}</Button>
+                  <h4 className="mb-4">{page.home.delivery_template}</h4>
+                  <Button className="w-56 mb-8">{base.download_pdf}</Button>
 
-              <h4 className="mb-4">{page.home.delivery_template}</h4>
-              <Button className="w-56 mb-8">{base.download_pdf}</Button>
-
-              <h4 className="mb-4">{page.home.code_conduct}</h4>
-              <Button className="w-56 mb-8">{base.download_pdf}</Button>
+                  <h4 className="mb-4">{page.home.code_conduct}</h4>
+                  <Button className="w-56 mb-8">{base.download_pdf}</Button>
+                </div>
+                <div className="flex flex-1 items-center lg:hidden justify-center">
+                  <Image
+                    src={eggPrep}
+                    alt="company-purchasements"
+                    className="rounded-full"
+                  />
+                </div>
+              </div>
             </div>
-            <div className="flex flex-1 items-center justify-center">
+            <div className="hidden flex-1 items-center lg:flex justify-center">
               <Image
                 src={eggPrep}
                 alt="company-purchasements"
@@ -111,15 +124,15 @@ export default async function Home({
             </div>
           </div>
 
-          <div className="lg:mt-20" id={"previlleges"}>
-            <h2 className="text-3xl uppercase z-10 absolute left-1/2 -translate-x-1/2 ">
+          <div className="lg:mt-20 mt-10" id={"previlleges"}>
+            <h2 className="lg:text-3xl text-xl uppercase z-10 absolute lg:left-1/2 lg:-translate-x-1/2 ">
               {page.home.advantages}
             </h2>
             <AdvantagesSlider data={advantageSlideArr} />
           </div>
 
-          <div className="lg:mt-24 flex items-center flex-col">
-            <h2 className="text-3xl uppercase text-center max-w-[490px] w-full">
+          <div className="lg:mt-24 mt-12 flex items-center flex-col">
+            <h2 className="lg:text-3xl text-xl uppercase text-center max-w-[490px] w-full">
               {page.home.actual_title}
             </h2>
             <p className="text-textGray text-center mt-8 mb-6 max-w-[750px] w-full">
@@ -130,7 +143,7 @@ export default async function Home({
           </div>
 
           <div
-            className="flex justify-between items-center my-14"
+            className="flex lg:flex-row flex-col justify-between items-center my-14 gap-4"
             id={"suppliers"}
           >
             <Image
@@ -139,8 +152,8 @@ export default async function Home({
               className="flex rounded-full overflow-hidden"
             />
 
-            <div className="flex flex-col w-[47%]">
-              <h2 className="text-3xl uppercase lg:mb-8">
+            <div className="flex flex-col lg:w-[47%] flex-1 lg:pt-0 pt-5 gap-4">
+              <h2 className="lg:text-3xl text-xl uppercase lg:mb-8">
                 {page.home.cooperation.title}
               </h2>
 
@@ -171,17 +184,17 @@ export default async function Home({
           </div>
 
           <div
-            className="flex justify-between items-center mb-10"
+            className="flex justify-between items-center mb-10 lg:flex-row flex-col gap-6"
             id={"expectation"}
           >
             <div>
-              <h2 className="text-5xl uppercase max-w-[620px] w-full mb-4">
+              <h2 className="lg:text-5xl text-xl uppercase max-w-[620px] w-full mb-4">
                 {page.home.expectation_title}
               </h2>
               <p className="text-textGray max-w-[490px] w-full">
                 {page.home.expectation_descr}
               </p>
-              <h2 className="text-5xl uppercase max-w-[620px] w-full mb-4 mt-8">
+              <h2 className="lg:text-5xl text-xl uppercase max-w-[620px] w-full mb-4 mt-8">
                 {page.home.expectation_title}
               </h2>
               <p className="text-textGray max-w-[490px] w-full">
@@ -196,8 +209,8 @@ export default async function Home({
             />
           </div>
 
-          <div className="lg:mt-36" id={"our_suppliers"}>
-            <h2 className="text-3xl uppercase z-10 absolute left-1/2 -translate-x-1/2 ">
+          <div className="lg:mt-36 mt-14" id={"our_suppliers"}>
+            <h2 className="lg:text-3xl text-xl uppercase z-10 absolute lg:left-1/2 lg:-translate-x-1/2 ">
               {header.our_suppliers}
             </h2>
             <SuppliersSlider data={suppliersSlider} />
@@ -205,15 +218,21 @@ export default async function Home({
         </Container>
 
         <div
-          className="flex items-center lg:mt-32 lg:h-[75vh] flex-1"
+          className="flex items-center lg:mt-32 lg:h-[75vh] flex-1 lg:flex-row flex-col mt-14"
           id={"cooperation"}
         >
           <div className="flex flex-1 max-w-[800px] h-full w-full">
-            <Image src={family} alt={"making"} className="w-full h-full" />
+            <Image
+              src={family}
+              alt={"making"}
+              className="w-full h-full rounded-lg"
+            />
           </div>
-          <div className="flex flex-col lg:ml-32 justify-between h-full content-between flex-1">
-            <div className="max-w-[490px] w-full flex flex-col flex-1">
-              <h2 className="text-5xl">{page.home.will_you_cooperate}</h2>
+          <div className="flex flex-col w-full lg:ml-32 justify-between h-full content-between flex-1 p-4">
+            <div className="lg:max-w-[490px] w-full flex flex-col flex-1">
+              <h2 className="lg:text-5xl text-2xl">
+                {page.home.will_you_cooperate}
+              </h2>
 
               <p className="mt-10 mb-14 max-w-96">
                 {page.home.cooperate_descr}
@@ -222,7 +241,7 @@ export default async function Home({
               <Button className="w-full">{base.send_request}</Button>
             </div>
 
-            <div className="flex flex-col ">
+            <div className="flex flex-col mt-8">
               <span>{base.our_mail}</span>
 
               <Link
@@ -233,14 +252,6 @@ export default async function Home({
               </Link>
             </div>
           </div>
-        </div>
-
-        <div className="w-full">
-          <Image
-            className="mx-auto lg:my-14 family_text"
-            src={familyText}
-            alt={"And together we will give happiness to our world!"}
-          />
         </div>
       </section>
     </>

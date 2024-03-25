@@ -1,4 +1,4 @@
-import "./globals.css";
+import "./global.scss";
 import type { Metadata } from "next";
 import { Locale, i18n } from "@/i18n.config";
 
@@ -36,7 +36,7 @@ export default function RootLayout({
           />
         </Head>
         <Header lang={params.lang} />
-        <main>{children}</main>
+        <main className="pt-36">{children}</main>
         <Footer />
       </body>
     </html>

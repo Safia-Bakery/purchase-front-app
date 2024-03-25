@@ -50,3 +50,12 @@
 html {
   scroll-behavior: smooth;
 }
+@media (max-width: 1200px) {
+  h2 {
+    font-size: 20px;
+  }
+
+  p {
+    font-size: 12px;
+  }
+}

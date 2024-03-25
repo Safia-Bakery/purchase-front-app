@@ -14,6 +14,10 @@
     border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 
   height: 50px;
+
+  @media (max-width: 1200px) {
+    height: 40px;
+  }
 }
 .primary {
   color: #ffffff;

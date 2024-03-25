@@ -16,12 +16,12 @@ export default function SecondarySlider<TProps>({
   return (
     <>
       <Swiper
-        slidesPerView={4}
+        slidesPerView={window.innerWidth < 1200 ? 1 : 4}
         spaceBetween={30}
         loop
         freeMode={true}
         // direction="vertical"
-        className="lg:!pt-12 lg:-mt-12"
+        className="lg:!pt-12 lg:-mt-12 !pt-6"
         modules={[FreeMode, Pagination]}
       >
         <SlideButtons />

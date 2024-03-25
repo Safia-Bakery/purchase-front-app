@@ -3,9 +3,7 @@ import {
   FC,
   HTMLInputTypeAttribute,
   KeyboardEventHandler,
-  useRef,
 } from "react";
-import cl from "classnames";
 import { UseFormRegisterReturn } from "react-hook-form";
 import styles from "./index.module.scss";
 
@@ -22,11 +20,10 @@ interface Props {
   ref?: any;
   defaultValue?: any;
   onKeyDown?: KeyboardEventHandler;
-  onSubmit?: () => void;
 }
 
 const MainInput: FC<Props> = ({
-  className,
+  className = "",
   placeholder = "",
   register,
   ref,
@@ -35,7 +32,7 @@ const MainInput: FC<Props> = ({
 }) => {
   return (
     <input
-      className={cl(className, "form-control mb-2", styles.inputBox)}
+      className={`${className} ${styles.inputBox}`}
       placeholder={placeholder || ""}
       ref={ref}
       defaultValue={defaultValue}
