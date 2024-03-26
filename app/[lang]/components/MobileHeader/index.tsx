@@ -17,8 +17,6 @@ const MobileHeader = ({ items }: Props) => {
 
   const toggleActive = () => $active((prev) => !prev);
 
-  console.log(active, "active");
-
   return (
     <>
       <Button

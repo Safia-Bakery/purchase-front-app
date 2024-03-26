@@ -13,7 +13,7 @@ export default async function Header({ lang }: { lang: Locale }) {
   const lib = await getDictionary(lang);
 
   return (
-    <header className="lg:py-6 py-2 fixed top-0 left-0 right-0 z-20 bg-white">
+    <header className="lg:py-6 py-2 fixed top-0 left-0 right-0 z-40 bg-white">
       <Container className="flex justify-between items-center w-full ">
         <CustomLink href="/" className="flex items-center gap-2 lg:flex-1">
           <Image src={safiaLogo} alt={"safia-logo"} height={70} width={70} />

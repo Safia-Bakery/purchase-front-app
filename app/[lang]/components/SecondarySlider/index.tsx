@@ -3,6 +3,8 @@ import { Swiper } from "swiper/react";
 import { FreeMode, Pagination } from "swiper/modules";
 import SlideButtons from "./button";
 import { ReactNode } from "react";
+import useWindowSize from "../../hooks/useWindowSize";
+import Loading from "../../loading";
 
 interface Props<T> {
   data: T[];
@@ -13,10 +15,13 @@ export default function SecondarySlider<TProps>({
   data,
   component,
 }: Props<TProps>) {
+  const size = useWindowSize();
+
+  if (!size.width) return <Loading />;
   return (
     <>
       <Swiper
-        slidesPerView={window.innerWidth < 1200 ? 1 : 4}
+        slidesPerView={size?.width < 1200 ? 1 : 4}
         spaceBetween={30}
         loop
         freeMode={true}
