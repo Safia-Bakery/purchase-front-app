@@ -59,3 +59,13 @@ html {
     font-size: 12px;
   }
 }
+
+table {
+  tr {
+    border-bottom: 1px solid #f1f1f1;
+    td,
+    th {
+      padding: 12px 15px;
+    }
+  }
+}

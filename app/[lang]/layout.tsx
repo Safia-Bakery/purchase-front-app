@@ -6,6 +6,7 @@ import { Inter } from "next/font/google";
 import Header from "./components/Header";
 import Head from "next/head";
 import Footer from "./components/Footer";
+import ScrollToTop from "./components/ScrollToTop";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -38,6 +39,7 @@ export default function RootLayout({
         <Header lang={params.lang} />
         <main className="pt-36">{children}</main>
         <Footer />
+        <ScrollToTop />
       </body>
     </html>
   );
