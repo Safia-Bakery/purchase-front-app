@@ -85,9 +85,9 @@ export default async function Home({
         </div>
       </section>
 
-      <section className="lg:mt-14">
+      <section className="lg:pt-14">
         <Container>
-          <div className="flex justify-between lg:my-16" id={"purchasements"}>
+          <div className="flex justify-between lg:py-16" id={"purchasements"}>
             <div className="flex flex-col flex-1 mt-3">
               <h2 className="text-3xl">{page.home.company_purchases}</h2>
               <p className="lg:text-lg text-xs mt-4 mb-6 text-textGray">
@@ -124,14 +124,14 @@ export default async function Home({
             </div>
           </div>
 
-          <div className="lg:mt-20 mt-10" id={"previlleges"}>
+          <div className="lg:pt-20 pt-10" id={"previlleges"}>
             <h2 className="lg:text-3xl text-xl uppercase z-10 absolute lg:left-1/2 lg:-translate-x-1/2 ">
               {page.home.advantages}
             </h2>
             <AdvantagesSlider data={advantageSlideArr} />
           </div>
 
-          <div className="lg:mt-24 mt-12 flex items-center flex-col">
+          <div className="lg:pt-24 pt-12 flex items-center flex-col">
             <h2 className="lg:text-3xl text-xl uppercase text-center max-w-[490px] w-full">
               {page.home.actual_title}
             </h2>
@@ -143,7 +143,7 @@ export default async function Home({
           </div>
 
           <div
-            className="flex lg:flex-row flex-col justify-between items-center my-14 gap-4"
+            className="flex lg:flex-row flex-col justify-between items-center py-14 gap-4"
             id={"suppliers"}
           >
             <Image
@@ -209,7 +209,7 @@ export default async function Home({
             />
           </div>
 
-          <div className="lg:mt-36 mt-14" id={"our_suppliers"}>
+          <div className="lg:pt-36 pt-14" id={"our_suppliers"}>
             <h2 className="lg:text-3xl text-xl uppercase z-10 absolute lg:left-1/2 lg:-translate-x-1/2 ">
               {header.our_suppliers}
             </h2>
@@ -218,7 +218,7 @@ export default async function Home({
         </Container>
 
         <div
-          className="flex items-center lg:mt-32 lg:h-[75vh] flex-1 lg:flex-row flex-col mt-14"
+          className="flex items-center lg:pt-32 lg:h-[75vh] flex-1 lg:flex-row flex-col pt-14"
           id={"cooperation"}
         >
           <div className="flex flex-1 max-w-[800px] h-full w-full">

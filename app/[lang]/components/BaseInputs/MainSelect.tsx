@@ -51,14 +51,7 @@ const MainSelect: FC<Props> = ({
         >
           <label className={styles.radio}>
             <input type="radio" value={2} className="mr-2" />
-            <span>
-              Мясо (в том числе мясо птицы) и продукция из него sjnsn qwjs
-              jqhwskjw sj wskqj sjw skqw ksqw kh
-            </span>
-          </label>
-          <label className={styles.radio}>
-            <input type="radio" value={2} className="mr-2" />
-            <span>
+            <span className={styles.checkmark}>
               Мясо (в том числе мясо птицы) и продукция из него sjnsn qwjs
               jqhwskjw sj wskqj sjw skqw ksqw kh
             </span>

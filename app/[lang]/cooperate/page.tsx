@@ -5,6 +5,7 @@ import { getDictionary } from "@/lib/dictionary";
 import BaseInput from "../components/BaseInputs";
 import MainInput from "../components/BaseInputs/MainInput";
 import MainSelect from "../components/BaseInputs/MainSelect";
+import MainFileUpload from "../components/BaseInputs/MainFileUpload";
 
 export default async function Cooperate({
   params: { lang },
@@ -39,6 +40,10 @@ export default async function Cooperate({
 
         <BaseInput label={page.cooperate.selectCategory}>
           <MainSelect />
+        </BaseInput>
+
+        <BaseInput label={page.cooperate.commercial_request}>
+          <MainFileUpload />
         </BaseInput>
       </div>
     </div>
