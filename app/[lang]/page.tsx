@@ -1,15 +1,18 @@
-import { Locale } from "@/i18n.config";
-import { getDictionary } from "@/lib/dictionary";
+import Link from "next/link";
+import Image from "next/image";
+
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+
+import { Locale } from "@/i18n.config";
+import { getDictionary } from "@/lib/dictionary";
 import MainSlider from "./components/MainSlider";
 import Container from "./components/Container";
 import Button from "./components/Button";
 import eggPrep from "@/public/images/eggPrep.png";
 import safia_img from "@/public/images/safia-img.png";
 import cooperateImg from "@/public/images/cooperate.png";
-import Image from "next/image";
 import stabilization from "@/public/icons/stabilization.svg";
 import caring from "@/public/icons/caring.svg";
 import developingIcon from "@/public/icons/developing.svg";
@@ -21,7 +24,7 @@ import supplier from "@/public/images/ss.png";
 import developing from "@/public/images/eggPrep.png";
 import AdvantagesSlider from "./components/AdvantagesSlider";
 import SuppliersSlider from "./components/SuppliersSlider";
-import Link from "next/link";
+import CustomLink from "./components/CustomLink";
 
 export default async function Home({
   params: { lang },
@@ -69,7 +72,7 @@ export default async function Home({
   return (
     <>
       <section>
-        <div className="relative ">
+        <div className="relative">
           <MainSlider />
           <Container className="relative lg:h-[60vh]">
             <div className="lg:absolute top-1/2 lg:-translate-y-1/2 lg:p-10 z-10 bg-white rounded-xl">
@@ -79,15 +82,19 @@ export default async function Home({
               <p className="md:max-w-[430px] w-full text-textGray lg:my-6 ">
                 {page.home.description}
               </p>
-              <Button className="w-64 lg:mt-0 mt-3">{base.send_request}</Button>
+              <CustomLink href="/cooperate">
+                <Button className="w-64 lg:mt-0 mt-3">
+                  {base.send_request}
+                </Button>
+              </CustomLink>
             </div>
           </Container>
         </div>
       </section>
 
-      <section className="lg:pt-14">
+      <section className="lg:pt-10">
         <Container>
-          <div className="flex justify-between lg:py-16" id={"purchasements"}>
+          <div className="flex justify-between lg:pt-20" id={"purchasements"}>
             <div className="flex flex-col flex-1 mt-3">
               <h2 className="text-3xl">{page.home.company_purchases}</h2>
               <p className="lg:text-lg text-xs mt-4 mb-6 text-textGray">
@@ -124,8 +131,8 @@ export default async function Home({
             </div>
           </div>
 
-          <div className="lg:pt-20 pt-10" id={"previlleges"}>
-            <h2 className="lg:text-3xl text-xl uppercase z-10 absolute lg:left-1/2 lg:-translate-x-1/2 ">
+          <div className="lg:pt-28 pt-16" id={"previlleges"}>
+            <h2 className="lg:text-3xl text-xl uppercase z-10 absolute lg:-mt-5 lg:left-1/2 lg:-translate-x-1/2 ">
               {page.home.advantages}
             </h2>
             <AdvantagesSlider data={advantageSlideArr} />
@@ -143,7 +150,7 @@ export default async function Home({
           </div>
 
           <div
-            className="flex lg:flex-row flex-col justify-between items-center py-14 gap-4"
+            className="flex lg:flex-row flex-col justify-between items-center py-20 gap-4"
             id={"suppliers"}
           >
             <Image
@@ -204,13 +211,12 @@ export default async function Home({
             <Image
               src={safia_img}
               alt={"safia-img"}
-              className="max-w-[620px] w-full"
-              objectFit="contain"
+              className="max-w-[620px] w-full object-contain"
             />
           </div>
 
           <div className="lg:pt-36 pt-14" id={"our_suppliers"}>
-            <h2 className="lg:text-3xl text-xl uppercase z-10 absolute lg:left-1/2 lg:-translate-x-1/2 ">
+            <h2 className="lg:text-3xl text-xl uppercase z-10 absolute lg:left-1/2 lg:-translate-x-1/2 lg:-mt-3">
               {header.our_suppliers}
             </h2>
             <SuppliersSlider data={suppliersSlider} />
@@ -238,18 +244,20 @@ export default async function Home({
                 {page.home.cooperate_descr}
               </p>
 
-              <Button className="w-full">{base.send_request}</Button>
+              <CustomLink href="/cooperate">
+                <Button className="w-full">{base.send_request}</Button>
+              </CustomLink>
             </div>
 
             <div className="flex flex-col mt-8">
               <span>{base.our_mail}</span>
 
-              <Link
+              <CustomLink
                 className="text-[40px] underline mt-3"
                 href={"mailto:safiabakery.uz"}
               >
                 safiabakery.uz
-              </Link>
+              </CustomLink>
             </div>
           </div>
         </div>

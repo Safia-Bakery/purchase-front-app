@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 import { i18n } from "@/i18n.config";
+import CustomLink from "../CustomLink";
 
 export default function LocaleSwitcher() {
   const pathName = usePathname();
@@ -40,12 +41,12 @@ export default function LocaleSwitcher() {
       {i18n.locales.map((locale) => {
         return (
           <li key={locale}>
-            <Link
+            <CustomLink
               href={redirectedPathName(locale)}
               className="rounded-md border bg-black px-3 py-2 text-white"
             >
               {locale}
-            </Link>
+            </CustomLink>
           </li>
         );
       })}

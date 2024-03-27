@@ -5,6 +5,7 @@ import Image from "next/image";
 import { getDictionary } from "@/lib/dictionary";
 import { Locale } from "@/i18n.config";
 import Link from "next/link";
+import CustomLink from "../CustomLink";
 
 interface Props {
   className?: string;
@@ -26,9 +27,12 @@ export default async function EmptyList({
       <h3 className="font-bold text-xl">{page.empty.title}</h3>
       <p className="text-textGray">{page.empty.descr}</p>
 
-      <Link href={"/"} className="uppercase underline mt-8 font-bold textxl">
+      <CustomLink
+        href={"/"}
+        className="uppercase underline mt-8 font-bold textxl"
+      >
         {base.to_main}
-      </Link>
+      </CustomLink>
     </div>
   );
 }

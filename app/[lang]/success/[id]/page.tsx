@@ -5,6 +5,7 @@ import Container from "../../components/Container";
 import Image from "next/image";
 import Button from "../../components/Button";
 import Link from "next/link";
+import CustomLink from "../../components/CustomLink";
 
 export default async function Success({
   params: { lang, id },
@@ -25,9 +26,9 @@ export default async function Success({
 
         <span className="text-primary mt-4">{id}</span>
 
-        <Link href={"/"}>
+        <CustomLink href={"/"}>
           <Button className="max-w-56 mt-6">{base.to_main}</Button>
-        </Link>
+        </CustomLink>
       </div>
     </Container>
   );

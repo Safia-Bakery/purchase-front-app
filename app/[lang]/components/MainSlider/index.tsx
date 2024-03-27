@@ -18,8 +18,7 @@ export default function MainSlider() {
             <Image
               src={item}
               alt={"slider-img"}
-              objectFit="contain"
-              className="lg:h-[60svh] w-full min-h-[280px]"
+              className="lg:h-[60svh] w-full min-h-[280px] object-center"
             />
           </SwiperSlide>
         ))}

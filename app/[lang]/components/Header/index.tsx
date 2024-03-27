@@ -8,6 +8,7 @@ import safiaLogo from "@/public/images/safia-logo.png";
 import userIcon from "@/public/icons/user.svg";
 import Container from "../Container";
 import MobileHeader from "../MobileHeader";
+import HeaderRouter from "../HeaderRouter";
 
 export default async function Header({ lang }: { lang: Locale }) {
   const lib = await getDictionary(lang);
@@ -24,7 +25,7 @@ export default async function Header({ lang }: { lang: Locale }) {
           <ul className="flex gap-x-8">
             {Object.entries(lib?.header || {})?.map((item) => (
               <li key={item[0]}>
-                <CustomLink href={`#${item[0]}`}>{item[1]}</CustomLink>
+                <HeaderRouter href={`${item[0]}`}>{item[1]}</HeaderRouter>
               </li>
             ))}
           </ul>

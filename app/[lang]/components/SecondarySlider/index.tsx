@@ -30,7 +30,7 @@ export default function SecondarySlider<TProps>({
         modules={[FreeMode, Pagination]}
       >
         <SlideButtons />
-        {data.map((item) => component(item))}
+        {[...data, ...data].map((item) => component(item))}
         {/* {data.map((item, idx) => (
           <SwiperSlide key={idx}>
             <div className="flex flex-col items-center mt-8">
