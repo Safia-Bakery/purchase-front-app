@@ -5,9 +5,9 @@ import SecondarySlider from "../SecondarySlider";
 import Image from "next/image";
 
 const AdvantagesSlider = ({ data }: { data: any }) => {
-  const renderFirstSlider = (data: any) => {
+  const renderFirstSlider = (data: any, idx: number) => {
     return (
-      <SwiperSlide key={data.title}>
+      <SwiperSlide key={idx}>
         <div className="flex flex-col items-center mt-8">
           <Image
             src={data.img}

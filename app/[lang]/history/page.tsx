@@ -16,7 +16,7 @@ export default async function History({
     <Container className="flex flex-[8] lg:gap-24 gap-10 lg:flex-row flex-col h-min">
       <div className="flex flex-[2] flex-col gap-6">
         <div className="px-10 py-8 bg-primary rounded-xl flex flex-col items-center">
-          <Image src={safiaLogo} alt={"safia-logo"} />
+          <Image src={safiaLogo} alt={"safia-logo"} priority />
 
           <h3 className="text-xl text-center mt-6 text-white">
             Махмуд Салимов

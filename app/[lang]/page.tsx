@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Image from "next/image";
 
 import "swiper/css";
@@ -57,12 +56,12 @@ export default async function Home({
   ];
 
   const suppliersSlider = [
-    { img: supplier, descr: "Здесь будет цитата от руководителся" },
+    { img: supplier, descr: "Здесь будет цитата от руководителся r" },
     {
       img: supplier,
-      descr: "Здесь будет цитата от руководителся, которая идет в две строки",
+      descr: "Здесь будет цитата от руководителся, которая идет в две строки p",
     },
-    { img: supplier, descr: "Здесь будет цитата от руководителся" },
+    { img: supplier, descr: "Здесь будет цитата от руководителся q" },
     {
       img: supplier,
       descr: "Здесь будет цитата от руководителся, которая идет в две строки",

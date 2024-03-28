@@ -31,7 +31,7 @@ export default async function Header({ lang }: { lang: Locale }) {
           </ul>
         </nav>
         <LocaleSwitcher />
-        <CustomLink className="hidden lg:flex ml-6" href={"/login"}>
+        <CustomLink className="hidden lg:flex ml-6" href={"/auth/register"}>
           <Image src={userIcon} alt={"user"} />
         </CustomLink>
 

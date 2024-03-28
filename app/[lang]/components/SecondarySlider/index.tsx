@@ -8,7 +8,7 @@ import Loading from "../../loading";
 
 interface Props<T> {
   data: T[];
-  component: (arg: T) => ReactNode;
+  component: (arg: T, idx: number) => ReactNode;
 }
 
 export default function SecondarySlider<TProps>({
@@ -30,7 +30,7 @@ export default function SecondarySlider<TProps>({
         modules={[FreeMode, Pagination]}
       >
         <SlideButtons />
-        {[...data, ...data].map((item) => component(item))}
+        {[...data, ...data].map((item, idx) => component(item, idx))}
         {/* {data.map((item, idx) => (
           <SwiperSlide key={idx}>
             <div className="flex flex-col items-center mt-8">

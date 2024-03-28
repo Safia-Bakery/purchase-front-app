@@ -7,6 +7,7 @@ import Header from "./components/Header";
 import Head from "next/head";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
+import { ReactNode } from "react";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -22,7 +23,7 @@ export default function RootLayout({
   children,
   params,
 }: {
-  children: React.ReactNode;
+  children: ReactNode;
   params: { lang: Locale };
 }) {
   return (
