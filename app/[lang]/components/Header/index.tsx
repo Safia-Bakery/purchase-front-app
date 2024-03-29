@@ -5,7 +5,7 @@ import CustomLink from "../CustomLink";
 import { Locale } from "@/i18n.config";
 import { getDictionary } from "@/lib/dictionary";
 import safiaLogo from "@/public/images/safia-logo.png";
-import userIcon from "@/public/icons/user.svg";
+
 import Container from "../Container";
 import MobileHeader from "../MobileHeader";
 import HeaderRouter from "../HeaderRouter";
@@ -31,9 +31,6 @@ export default async function Header({ lang }: { lang: Locale }) {
           </ul>
         </nav>
         <LocaleSwitcher />
-        <CustomLink className="hidden lg:flex ml-6" href={"/auth/register"}>
-          <Image src={userIcon} alt={"user"} />
-        </CustomLink>
 
         <MobileHeader items={lib?.header} />
       </Container>

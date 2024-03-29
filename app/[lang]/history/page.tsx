@@ -1,9 +1,9 @@
-import Container from "../components/Container";
+import Container from "components/Container";
 import safiaLogo from "@/public/icons/safia-logo-white.svg";
 import Image from "next/image";
 import { Locale } from "@/i18n.config";
 import { getDictionary } from "@/lib/dictionary";
-import EmptyList from "../components/EmptyList";
+import EmptyList from "components/EmptyList";
 
 export default async function History({
   params: { lang },

@@ -1,11 +1,11 @@
 import { Locale } from "@/i18n.config";
 import { getDictionary } from "@/lib/dictionary";
 import safiaLogo from "@/public/images/colored-safia-logo.png";
-import Container from "../../components/Container";
+import Container from "components/Container";
 import Image from "next/image";
-import Button from "../../components/Button";
+import Button from "components/Button";
 import Link from "next/link";
-import CustomLink from "../../components/CustomLink";
+import CustomLink from "components/CustomLink";
 
 export default async function Success({
   params: { lang, id },

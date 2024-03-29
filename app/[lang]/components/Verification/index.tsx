@@ -16,13 +16,17 @@ interface Props {
     code_sent: string;
     resend: string;
     required_field: string;
+    password: string;
+    phone: string;
+    reset: string;
   };
 }
 
 const Verification = ({ lang }: Props) => {
   const email = useQueryString("email");
   const phone_number = useQueryString("phone_number");
-  const { replace } = useRouter();
+  const is_reset = useQueryString("is_reset");
+  const { replace, push } = useRouter();
 
   const {
     register,
@@ -39,8 +43,8 @@ const Verification = ({ lang }: Props) => {
         ...(email && { email }),
       })
       .then((res) => {
-        if (res.status === 200) {
-          replace("/");
+        if (res?.status === 200) {
+          !!is_reset ? push("/auth/reset-password") : replace("/");
           localStorage.setItem("token", res.data.access_token);
         }
       })
@@ -50,16 +54,19 @@ const Verification = ({ lang }: Props) => {
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col">
       <h1 className="text-2xl text-center font-bold lg:mb-6 mb-3">
-        {lang.code_sent} {email ?? phone_number}
+        {`${lang.code_sent} ${email ?? phone_number}`}
       </h1>
       <BaseInput error={errors.otp}>
         <MaskedInput
           mask="9 - 9 - 9 - 9 - 9 - 9"
+          placeholder={lang.password}
           register={register("otp", { required: lang.required_field })}
         />
       </BaseInput>
 
-      <Button className="w-full capitalize mt-4">{lang.next}</Button>
+      <Button type="submit" className="w-full capitalize mt-4">
+        {lang.next}
+      </Button>
 
       <div className="mx-auto mt-6 text-blue-500">
         <Timer label={lang.resend} resendLabel={lang.resend_after} />

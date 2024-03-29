@@ -1,15 +1,18 @@
 import axios, { AxiosInstance, AxiosResponse } from "axios";
 
 const baseApi: AxiosInstance = axios.create({
-  baseURL: "https://Api.purchase.safiabakery.uz",
+  baseURL: "https://api.purchase.safiabakery.uz",
 });
+
+const invalidarr = ["undefined", "null", ""];
 
 baseApi.interceptors.request.use(
   (config) => {
-    const accessToken = JSON.parse(localStorage.getItem("token") || "null");
+    const token = localStorage.getItem("token")?.toString();
+    // const accessToken = !invalidarr?.includes(token!) ? token! : "";
 
-    if (accessToken) {
-      if (config.headers) config.headers.token = accessToken;
+    if (!!token) {
+      if (config.headers) config.headers.Authorization = `Bearer ${token}`;
     }
     return config;
   },
@@ -23,7 +26,7 @@ baseApi.interceptors.response.use(
     return response;
   },
   (error) => {
-    if (error.response.status === 401) {
+    if (error?.response?.status === 401) {
       logoutUser();
     }
     return Promise.reject(error);
@@ -32,7 +35,7 @@ baseApi.interceptors.response.use(
 
 function logoutUser() {
   localStorage.removeItem("token");
-  window.location.replace("/auth/login");
+  // window.location.replace("/auth/login");
 }
 
 export default baseApi;

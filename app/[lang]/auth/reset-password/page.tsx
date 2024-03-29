@@ -1,8 +1,8 @@
 import { Locale } from "@/i18n.config";
 import { getDictionary } from "@/lib/dictionary";
-import Verification from "components/Verification";
+import ResetPasswordLayout from "components/ResetPasswordLayout";
 
-export default async function Verify({
+export default async function ResetPassword({
   params: { lang },
 }: {
   params: { lang: Locale };
@@ -10,14 +10,10 @@ export default async function Verify({
   const { base, page } = await getDictionary(lang);
 
   return (
-    <Verification
+    <ResetPasswordLayout
       lang={{
-        resend_after: page.verify.resend_after,
-        code_sent: page.verify.code_sent,
-        resend: page.verify.resend,
-        reset: page.verify.reset,
         password: page.login.password,
-        phone: page.login.phone,
+        new_password: page.login.new_password,
         next: base.next,
         required_field: base.required_field,
       }}

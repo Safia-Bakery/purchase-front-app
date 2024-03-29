@@ -2,10 +2,10 @@ import { Locale } from "@/i18n.config";
 import Image from "next/image";
 import family from "@/public/images/family.png";
 import { getDictionary } from "@/lib/dictionary";
-import BaseInput from "../components/BaseInputs";
-import MainInput from "../components/BaseInputs/MainInput";
-import MainSelect from "../components/BaseInputs/MainSelect";
-import MainFileUpload from "../components/BaseInputs/MainFileUpload";
+import BaseInput from "components/BaseInputs";
+import MainInput from "components/BaseInputs/MainInput";
+import MainSelect from "components/BaseInputs/MainSelect";
+import MainFileUpload from "components/BaseInputs/MainFileUpload";
 
 export default async function Cooperate({
   params: { lang },

@@ -13,6 +13,7 @@ import Link from "next/link";
 import CustomLink from "../CustomLink";
 import MaskedInput from "../BaseInputs/MaskedInput";
 import { fixedString } from "@/lib/helper";
+import { useState } from "react";
 
 interface Props {
   lang: {
@@ -21,11 +22,14 @@ interface Props {
     password: string;
     register: string;
     required: string;
+    error: string;
+    forgot_password: string;
   };
 }
 
 const LoginLayout = ({ lang }: Props) => {
   const { replace } = useRouter();
+  const [error, $error] = useState(false);
 
   const {
     register,
@@ -47,11 +51,11 @@ const LoginLayout = ({ lang }: Props) => {
       )
       .then((res) => {
         if (res?.status === 200) {
-          replace("/");
           localStorage.setItem("token", res.data.access_token);
+          replace("/");
         }
       })
-      .catch((e) => alert(e.message));
+      .catch(() => $error(true));
   };
 
   return (
@@ -60,7 +64,7 @@ const LoginLayout = ({ lang }: Props) => {
         <Image src={cross} alt={"cancel"} />
       </CustomLink>
       <Image src={logo} alt={"safia-logo"} className="mx-auto lb:mb-10 mb-3" />
-      <BaseInput error={errors.phone}>
+      <BaseInput error={errors.username}>
         <MaskedInput
           placeholder={lang.phone}
           defaultValue={998}
@@ -70,10 +74,20 @@ const LoginLayout = ({ lang }: Props) => {
       </BaseInput>
       <BaseInput error={errors.password}>
         <MainInput
+          type="password"
           register={register("password", { required: lang.required })}
           placeholder={lang.password}
         />
       </BaseInput>
+
+      {error && <p className="text-red-400 text-xs">{lang.error}</p>}
+
+      <Link
+        href={"/auth/forgot"}
+        className="text-blue-500 capitalize lg:mt-6 mt-3 underline"
+      >
+        {lang.forgot_password}
+      </Link>
 
       <Button type="submit" className="w-full capitalize mt-4">
         {lang.next}

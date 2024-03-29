@@ -17,6 +17,8 @@ export default async function Login({
         password: page.login.password,
         register: page.login.register,
         required: base.required_field,
+        error: page.login.error,
+        forgot_password: page.login.forgot_password,
       }}
     />
   );
